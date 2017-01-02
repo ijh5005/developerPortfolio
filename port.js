@@ -4,6 +4,9 @@ $(document).ready( function () {
 	var dot = 1;
 	var page = 2;
 	var currentPage = 2;
+	var animateVar = "false";
+	var width = $(window).width();
+
 	var mouseovers = function (selector, pic, returnPic) {
 		$(selector).mouseover( function () {
 			$("" + selector + " img").attr("src", pic);
@@ -98,5 +101,75 @@ $(document).ready( function () {
 
 	window.setInterval(function(){
 		dotFunction();
+	}, 1000);
+
+	//animate the page
+	var animate = function () {
+		animateVar = "true";
+		$("#one").animate({left:"-25px"}).animate({ left: "15px"}, { 
+																	duration: 100,
+																	complete: function () {
+																		$("#two").animate({ left: "500px" }, { duration: 200 });
+																		$("#one").animate({
+																			left: "0px"
+																		}, {
+																			duration: 100,
+																			complete: function () {
+																				$("#two").addClass("turnFast").addClass("neg20degs");
+																				setTimeout( function () {
+																					$("#two").removeClass("turnFast").addClass("turnMed");
+																				}, 500);
+																				setTimeout( function () {
+																					$("#two").removeClass("neg20degs");
+																					setTimeout( function () {
+																						$("#two").animate({
+																							left: "400px"
+																						}, {
+																							complete: function () {
+																								$("#one").addClass("turnFast").addClass("pos20degs");
+																								setTimeout( function () {
+																									$("#one").removeClass("turnFast").addClass("turnMed");
+																								}, 500);
+																								setTimeout( function() {
+																									$("#one").removeClass("pos20degs");
+																									setTimeout( function () {
+																										$("#two").animate({
+																											left: "100px"
+																										}, {
+																											complete: function () {
+																												$("#one").addClass("turnFast").addClass("pos20degs");
+																												setTimeout( function () {
+																													$("#one").removeClass("turnFast").addClass("turnMed");
+																												}, 500);
+																												setTimeout( function () {
+																													$("#one").removeClass("pos20degs");
+																													setTimeout( function () {
+																														$("#two").animate({
+																															left: "0px"
+																														}, { duration: 500, complete: function () {
+																															animateVar = "false";
+																														}});
+																													}, 200);
+																												}, 800);
+																											}
+																										});
+																									}, 200)
+																								}, 800);
+																							}
+																						});
+																					}, 800);
+																				}, 1800);
+																			}
+																		});
+																	}
+		});
+	};
+
+	//watching animation window size and animateVar requirements
+	window.setInterval( function () {
+		width = $(window).width();
+		if ( animateVar == "false" && width > 1199) {
+			animate();
+		}
 	}, 1000);
 });

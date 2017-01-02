@@ -6,6 +6,10 @@ p {
 	color: #FE5C5C;
 }
 
+#spaceFiller {
+	height: 30px;
+}
+
 #aboutMe,
 #projects {
     border: 6px solid #888;
@@ -98,4 +102,17 @@ p {
     margin: 6px;
     border-radius: 5px;
     margin-bottom: 2em;
+}
+
+.turnFast {
+	transition: transform 0.3s linear 0s;
+}
+.turnMed {
+	transition: transform 0.4s linear 0s;
+}
+.neg20degs {
+	transform: perspective( 600px ) rotateY( -20deg );
+}
+.pos20degs {
+	transform: perspective( 600px ) rotateY( 20deg );	
 }
