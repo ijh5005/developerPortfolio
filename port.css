@@ -45,6 +45,10 @@ p {
 	margin-top: 10px;
 }
 
+span.title {
+	font-size: 1em;
+}
+
 #projectTitle {
 	margin-top: 74px;
 	font-size: 4em;
@@ -119,4 +123,8 @@ p {
 }
 .pos20degs {
 	transform: perspective( 600px ) rotateY( 20deg );	
+}
+.playNice {
+	transform: perspective( 600px ) rotateY( -24deg ) rotateX(-28deg);
+	transition: transform 0.5s linear 0s;
 }

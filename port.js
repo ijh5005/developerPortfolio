@@ -109,17 +109,33 @@ $(document).ready( function () {
 		$("#one").animate({left:"-25px"}).animate({ left: "15px"}, { 
 																	duration: 100,
 																	complete: function () {
-																		$("#two").animate({ left: "500px" }, { duration: 200 });
+																		$("#two").animate({ left: "500px" }, { 
+																												duration: 200,
+																												start: function () {
+																													$("#one img").attr("src", "tease.jpg");
+																													$("#profilePicHolder").addClass("playNice");
+																													$("#profilePicHolder img").attr("src", "playNice.jpg");
+																												}
+																											});
 																		$("#one").animate({
 																			left: "0px"
 																		}, {
 																			duration: 100,
 																			complete: function () {
 																				$("#two").addClass("turnFast").addClass("neg20degs");
+																				$("#two img").attr("src", "hey.jpg");
 																				setTimeout( function () {
 																					$("#two").removeClass("turnFast").addClass("turnMed");
+																					setTimeout( function () {
+																						$("#one img").attr("src", "logicPuzzle.jpg");
+																						setTimeout( function () {
+																							$("#profilePicHolder").removeClass("playNice");
+																							$("#profilePicHolder img").attr("src", "profilePic.jpg");
+																						}, 500);
+																					}, 500);
 																				}, 500);
 																				setTimeout( function () {
+																					$("#two img").attr("src", "sas.jpg");
 																					$("#two").removeClass("neg20degs");
 																					setTimeout( function () {
 																						$("#two").animate({
@@ -136,6 +152,9 @@ $(document).ready( function () {
 																										$("#two").animate({
 																											left: "100px"
 																										}, {
+																											start: function () {
+																												$("#two img").attr("src", "smile.jpg");
+																											},
 																											complete: function () {
 																												$("#one").addClass("turnFast").addClass("pos20degs");
 																												setTimeout( function () {
@@ -146,8 +165,13 @@ $(document).ready( function () {
 																													setTimeout( function () {
 																														$("#two").animate({
 																															left: "0px"
-																														}, { duration: 500, complete: function () {
-																															animateVar = "false";
+																														}, { 
+																															duration: 500,
+																															complete: function () {
+																																animateVar = "false";
+																																setTimeout( function () {
+																																	$("#two img").attr("src", "sas.jpg");
+																																}, 500);
 																														}});
 																													}, 200);
 																												}, 800);
@@ -168,7 +192,7 @@ $(document).ready( function () {
 	//watching animation window size and animateVar requirements
 	window.setInterval( function () {
 		width = $(window).width();
-		if ( animateVar == "false" && width > 1199) {
+		if ( animateVar == "false" && width > 1199 && currentPage === 2) {
 			animate();
 		}
 	}, 1000);
