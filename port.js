@@ -196,4 +196,14 @@ $(document).ready( function () {
 			animate();
 		}
 	}, 1000);
+
+	//check for background requirements
+	window.setInterval( function () {
+		width = $(window).width();
+		if ( width > 1199 ) {
+			$("#aboutMe, #projects").css("background-image", "url('comic.jpg')");
+		} else {
+			$("#aboutMe, #projects").css("background-image", "url('')");
+		}
+	}, 1000);
 });
