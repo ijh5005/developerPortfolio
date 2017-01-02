@@ -50,6 +50,10 @@ p {
 	font-size: 4em;
 }
 
+#note {
+	font-size: 0.5em;
+}
+
 .gallery {
 	position: relative;
 	top: 1em;
