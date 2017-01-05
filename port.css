@@ -90,6 +90,10 @@ span.title {
 	transform: perspective( 600px ) rotateY(-24deg );
 }
 
+.animateTurn {
+	transform: perspective( 600px ) rotateY(-24deg );
+}
+
 .turnLeft:hover {
 	transform: perspective( 600px ) rotateY(-18deg );
 }
@@ -127,4 +131,8 @@ span.title {
 .playNice {
 	transform: perspective( 600px ) rotateY( -24deg ) rotateX(-28deg);
 	transition: transform 0.5s linear 0s;
+}
+
+.aboutP {
+	display: none;
 }

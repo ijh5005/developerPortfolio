@@ -206,4 +206,37 @@ $(document).ready( function () {
 			$("#aboutMe, #projects").css("background-image", "url('')");
 		}
 	}, 1000);
+
+	//animate pic on about page
+	window.setInterval( function () {
+		if ( currentPage === 1 ) {
+			setTimeout( function () {
+				$(".turn img").attr("src", "helloPic.jpg");
+				$("#profilePicHolder").addClass("animateTurn");
+				setTimeout( function () {
+					$(".turn img").attr("src", "profilePic.jpg");
+					$("#profilePicHolder").removeClass("animateTurn");
+				}, 4500);
+			}, 1000);
+		}
+	}, 15000);
+
+	//about page slide down effect
+	$("#projects").click( function () {
+		setTimeout( function () {
+			$(".aboutP").css("display", "none");
+		}, 2000);
+	});
+	$("#aboutMe").click( function () {
+		setTimeout( function () {
+			$(".aboutP.one").slideDown(1000, function () {
+				$(".aboutP.two").slideDown(500, function () {
+					$(".aboutP.three").slideDown(1000, function () {
+						$(".aboutP.four").slideDown(1000);
+					});
+				});
+			});
+		}, 2000);
+
+	});
 });
