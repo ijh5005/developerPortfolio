@@ -1,7 +1,7 @@
 body {
 	/*background-color: #555;*/
-	background-image: url("greyPattern.jpg");
-	background-size: 0.4em;
+	/*background-image: url("greyPattern.jpg");
+	background-size: 0.4em;*/
 }
 
 #pageLiner {
@@ -14,11 +14,12 @@ body {
 }
 
 .sideLiner {
-	background-image: url("greyPattern.jpg");
-	background-size: 2.4em;
+	/*background-image: url("greyPattern.jpg");
+	background-size: 2.4em;*/
 	height: 100vh;
 	width: 100vw;
-	opacity: 0.08;
+	/*opacity: 0.08;*/
+	background-image: url("greyPatternPic.jpg");
 	position: fixed;
 }
 
