@@ -1,3 +1,27 @@
+body {
+	/*background-color: #555;*/
+	background-image: url("greyPattern.jpg");
+	background-size: 0.4em;
+}
+
+#pageLiner {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
+}
+
+.sideLiner {
+	background-image: url("greyPattern.jpg");
+	background-size: 2.4em;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0.08;
+	position: fixed;
+}
+
 p {
 	font-family: 'Francois One', sans-serif;
 }
@@ -10,14 +34,27 @@ p {
 	height: 30px;
 }
 
+#profilePicHolder {
+	left: 10em;
+	position: relative;
+}
+
 #aboutMe,
 #projects {
-    border: 6px solid #888;
-    border-radius: 5px;
+    border: 6px solid #555;
+    border-radius: 100px;
     text-align: center;
     font-size: 3em;
     margin-top: 6px;
-    background-image: url("comic.jpg");
+    width: 6em;
+}
+
+#aboutMe {
+    top: 3em;
+}
+
+#projects {
+    top: 4em;
 }
 
 #galleryAbout {
@@ -37,9 +74,13 @@ p {
 #profilePic {
     height: 26em;
     border-radius: 200px;
+    top: 2em;
+    position: relative;
+    border: 4px solid #555;
 }
 
 .title {
+	color: #CCC;
 	font-family: 'Luckiest Guy', cursive;
 	font-size: 2em;
 	margin-top: 10px;
@@ -50,7 +91,6 @@ span.title {
 }
 
 #projectTitle {
-	margin-top: 74px;
 	font-size: 4em;
 }
 
@@ -108,7 +148,7 @@ span.title {
 }
 
 .projectShowcase {
-	border: 4px solid #888;
+	border: 4px solid #555;
     height: 28em;
     width: 28em;
     margin: 6px;
@@ -135,4 +175,18 @@ span.title {
 
 .aboutP {
 	display: none;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
 }

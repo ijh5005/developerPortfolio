@@ -18,8 +18,8 @@ $(document).ready( function () {
 	};
 
 	mouseovers(".turn", "helloPic.jpg", "profilePic.jpg");
-	mouseovers("#one", "logicPuzzle2.jpg", "logicPuzzle.jpg");
-	mouseovers("#two", "sas2.jpg", "sas.jpg");
+	//mouseovers("#one", "logicPuzzle2.jpg", "logicPuzzle.jpg");
+	//mouseovers("#two", "sas2.jpg", "sas.jpg");
 
 	$("#aboutMe").click( function () {
 		currentPage = 1;
@@ -112,9 +112,9 @@ $(document).ready( function () {
 																		$("#two").animate({ left: "500px" }, { 
 																												duration: 200,
 																												start: function () {
-																													$("#one img").attr("src", "tease.jpg");
-																													$("#profilePicHolder").addClass("playNice");
-																													$("#profilePicHolder img").attr("src", "playNice.jpg");
+																													//$("#one img").attr("src", "tease.jpg");
+																													//$("#profilePicHolder").addClass("playNice");
+																													//$("#profilePicHolder img").attr("src", "playNice.jpg");
 																												}
 																											});
 																		$("#one").animate({
@@ -123,19 +123,19 @@ $(document).ready( function () {
 																			duration: 100,
 																			complete: function () {
 																				$("#two").addClass("turnFast").addClass("neg20degs");
-																				$("#two img").attr("src", "hey.jpg");
+																				//$("#two img").attr("src", "hey.jpg");
 																				setTimeout( function () {
 																					$("#two").removeClass("turnFast").addClass("turnMed");
 																					setTimeout( function () {
-																						$("#one img").attr("src", "logicPuzzle.jpg");
+																						//$("#one img").attr("src", "logicPuzzle.jpg");
 																						setTimeout( function () {
-																							$("#profilePicHolder").removeClass("playNice");
-																							$("#profilePicHolder img").attr("src", "profilePic.jpg");
+																							//$("#profilePicHolder").removeClass("playNice");
+																							//$("#profilePicHolder img").attr("src", "profilePic.jpg");
 																						}, 500);
 																					}, 500);
 																				}, 500);
 																				setTimeout( function () {
-																					$("#two img").attr("src", "sas.jpg");
+																					//$("#two img").attr("src", "sas.jpg");
 																					$("#two").removeClass("neg20degs");
 																					setTimeout( function () {
 																						$("#two").animate({
@@ -153,7 +153,7 @@ $(document).ready( function () {
 																											left: "100px"
 																										}, {
 																											start: function () {
-																												$("#two img").attr("src", "smile.jpg");
+																												//$("#two img").attr("src", "smile.jpg");
 																											},
 																											complete: function () {
 																												$("#one").addClass("turnFast").addClass("pos20degs");
@@ -170,7 +170,7 @@ $(document).ready( function () {
 																															complete: function () {
 																																animateVar = "false";
 																																setTimeout( function () {
-																																	$("#two img").attr("src", "sas.jpg");
+																																	//$("#two img").attr("src", "sas.jpg");
 																																}, 500);
 																														}});
 																													}, 200);
@@ -198,28 +198,28 @@ $(document).ready( function () {
 	}, 1000);
 
 	//check for background requirements
-	window.setInterval( function () {
-		width = $(window).width();
-		if ( width > 1199 ) {
-			$("#aboutMe, #projects").css("background-image", "url('comic.jpg')");
-		} else {
-			$("#aboutMe, #projects").css("background-image", "url('')");
-		}
-	}, 1000);
+	// window.setInterval( function () {
+	// 	width = $(window).width();
+	// 	if ( width > 1199 ) {
+	// 		$("#aboutMe, #projects").css("background-image", "url('comic.jpg')");
+	// 	} else {
+	// 		$("#aboutMe, #projects").css("background-image", "url('')");
+	// 	}
+	// }, 1000);
 
 	//animate pic on about page
 	window.setInterval( function () {
-		if ( currentPage === 1 ) {
-			setTimeout( function () {
+		//if ( currentPage === 1 ) {
+			//setTimeout( function () {
 				$(".turn img").attr("src", "helloPic.jpg");
 				$("#profilePicHolder").addClass("animateTurn");
 				setTimeout( function () {
 					$(".turn img").attr("src", "profilePic.jpg");
 					$("#profilePicHolder").removeClass("animateTurn");
-				}, 4500);
-			}, 1000);
-		}
-	}, 15000);
+				}, 2000);
+			//}, 1000);
+		//}
+	}, 8000);
 
 	//about page slide down effect
 	$("#projects").click( function () {
@@ -229,10 +229,10 @@ $(document).ready( function () {
 	});
 	$("#aboutMe").click( function () {
 		setTimeout( function () {
-			$(".aboutP.one").slideDown(1000, function () {
-				$(".aboutP.two").slideDown(500, function () {
-					$(".aboutP.three").slideDown(1000, function () {
-						$(".aboutP.four").slideDown(1000);
+			$(".aboutP.one").slideDown(500, function () {
+				$(".aboutP.two").slideDown(250, function () {
+					$(".aboutP.three").slideDown(500, function () {
+						$(".aboutP.four").slideDown(500);
 					});
 				});
 			});
