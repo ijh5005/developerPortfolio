@@ -223,11 +223,13 @@ $(document).ready( function () {
 
 	//about page slide down effect
 	$("#projects").click( function () {
+		$("#background").css("background-size", "100vw 100vh");
 		setTimeout( function () {
 			$(".aboutP").css("display", "none");
 		}, 2000);
 	});
 	$("#aboutMe").click( function () {
+		$("#background").css("background-size", "100vw 144vh");
 		setTimeout( function () {
 			$(".aboutP.one").slideDown(500, function () {
 				$(".aboutP.two").slideDown(250, function () {
